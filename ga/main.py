@@ -117,8 +117,8 @@ if __name__ == "__main__":
     for i in range(num_repetitions):
         (population, survival_values) = genetic_algorithm(instance, config, fitness, best_fitness=best_fitness[:,i], perf_counter=perf_counter[:,i], process_time=process_time[:,i], all_fitness=all_fitness)
         timer = Timer()
-        fitness(population, instance, timer, True)
-        popularity += population
+        fitness(population[0], instance, timer, True)
+        popularity += population[0]
         print('#{}\n'.format(i))
         print('Survival values:\n{}\n'.format(survival_values))
         print('Best Individual:\n{}\n'.format(population))
